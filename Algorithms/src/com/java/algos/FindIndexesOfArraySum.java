@@ -1,4 +1,4 @@
-package com.java2novice.algos;
+package com.java.algos;
 
 import java.util.HashMap;
 import java.util.Map;

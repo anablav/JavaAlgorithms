@@ -1,4 +1,4 @@
-package com.java2novice.algos;
+package com.java.algos;
   
 public class SinglyLinkedListImpl<T> {
   
@@ -27,6 +27,7 @@ public class SinglyLinkedListImpl<T> {
       
     public void traverse(){
           
+    	System.out.println("\ntraversing the linked list\n");
         Node<T> tmp = head;
         while(true){
             if(tmp == null){
@@ -51,25 +52,59 @@ public class SinglyLinkedListImpl<T> {
         }
         head = prev;
     }
+    
+    public void sort(){
+        
+        System.out.println("\nsorting the linked list\n");
+        Node<T> tmp = null;
+        Node<T> current = head;
+        Node<T> next = null;
+        int counter = 0;
+        boolean swap = true;
+        //while (swap) {
+        //	swap = false;
+	        while(current != null && current.next != null){
+	        	if((int)current.getValue() > (int)current.next.getValue()) {
+		        	counter++;
+		            next = current;
+		            tmp = next.next;
+		            current = current.next;
+		            current.next = next;
+		            next.next = tmp;
+		            if (counter == 1) {
+		            	head = current;
+		            }
+		            swap = true;
+	        	}
+	        	current = current.next;
+	        	System.out.println("\ncurrent.value " + current.value);
+	        	System.out.println("\nhead.value " + head.value);
+	        	traverse();
+	        }
+	        //traverse();
+        }
+    //}
      
     public static void main(String a[]){
         SinglyLinkedListImpl<Integer> sl = new SinglyLinkedListImpl<Integer>();
+        sl.add(8);
+        sl.add(7);
+        sl.add(5);
         sl.add(3);
-        sl.add(32);
-        sl.add(54);
-        sl.add(89);
         System.out.println();
         sl.traverse();
         System.out.println();
-        sl.reverse();
+        //sl.reverse();
+        //sl.traverse();
+        sl.sort();
         sl.traverse();
     }
 }
   
 class Node<T> implements Comparable<T> {
       
-    private T value;
-    private Node<T> nextRef;
+    T value;
+    Node<T> next;
       
     public T getValue() {
         return value;
@@ -78,10 +113,10 @@ class Node<T> implements Comparable<T> {
         this.value = value;
     }
     public Node<T> getNextRef() {
-        return nextRef;
+        return next;
     }
     public void setNextRef(Node<T> ref) {
-        this.nextRef = ref;
+        this.next = ref;
     }
     @Override
     public int compareTo(T arg) {
