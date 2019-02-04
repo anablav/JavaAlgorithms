@@ -1,4 +1,4 @@
-package com.java2novice.algos;
+package com.java.algos;
 //https://www.geeksforgeeks.org/check-if-a-given-sequence-of-moves-for-a-robot-is-circular-or-not/
 public class RoboMove {
 	public static boolean isCircular(char[] pathArr) {

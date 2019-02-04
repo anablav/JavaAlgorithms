@@ -1,4 +1,4 @@
-package com.java2novice.algos;
+package com.java.algos;
 
 public class VirtusaTest {
 	
