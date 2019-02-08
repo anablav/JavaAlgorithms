@@ -8,9 +8,7 @@ public class MergeSortedArray {
 	
 	//A = { 1,4,6,9}
 	//B = { 2,4,5,6}
-
 	//No Duplicate Values and Should be sorted.
-
 	//AB = { 1,2,4,5,6,9}
 	
 	public static void main(String[] args) {
