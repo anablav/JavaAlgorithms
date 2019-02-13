@@ -7,7 +7,9 @@ public class RotateArray {
 	
 	int count = 0;
 	
+	// This is O(m*n) complexity
 	public void rotateArr() {
+		count = 0;
 		while (count < noOfTimes) {
 			count++;
 			int temp = a[0];
@@ -18,12 +20,36 @@ public class RotateArray {
 		}
 		
 		for(int i=0; i<a.length; i++) {
-			System.out.println(a[i]);
+			System.out.print(a[i] + ",");
 		}
+		System.out.println();
 	}
+	
+	// This is O(n) complexity
+		public void rotateArr1() {
+			count = 0;
+			int tmp[] = new int[noOfTimes];
+			for(int j=0; j<noOfTimes; j++) {
+				tmp[j] = a[j];
+			}
+			for (int i=0; i<a.length-noOfTimes; i++) {
+				a[i] = a[i+noOfTimes]; //4,5,6,7,1,2,3
+			}
+			
+			for(int k=a.length-noOfTimes; k<a.length; k++) {
+				a[k] = tmp[count++];
+			}
+			
+			for(int i=0; i<a.length; i++) {
+				System.out.print(a[i] + ",");
+			}
+			System.out.println();
+		}
 	
 	public static void main(String[] args) {
 		RotateArray ra = new RotateArray();
 		ra.rotateArr();
+		RotateArray ra1 = new RotateArray();
+		ra1.rotateArr1();
 	}
 }
