@@ -1,5 +1,6 @@
 package com.test;
 
+//Sum of divisors of first number is equal to the secondnumber and vice versa
 public class AmicableNumbers {
 	
 	public static boolean isAmicable(int a, int b) {
